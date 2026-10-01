@@ -78,16 +78,9 @@ namespace API.Logging
         private void WriteLog(string level, string message)
         {
             string logDirectory = Path.Combine(AppContext.BaseDirectory, "Logs");
-
             Directory.CreateDirectory(logDirectory);
-
-            string logFile = Path.Combine(
-                logDirectory,
-                $"{DateTime.Now:yyyy-MM-dd}.log");
-
-            string logMessage =
-                $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} | {level} | {message}";
-
+            string logFile = Path.Combine(logDirectory,$"{DateTime.Now:yyyy-MM-dd}.log");
+            string logMessage =$"{DateTime.Now:yyyy-MM-dd HH:mm:ss.fff} | {level} | {message}";
             File.AppendAllText(logFile, logMessage + Environment.NewLine);
         }
         #endregion
