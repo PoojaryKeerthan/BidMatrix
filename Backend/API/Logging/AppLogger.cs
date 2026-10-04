@@ -47,7 +47,7 @@ namespace API.Logging
             WriteLog("INFO",$"{res.ClassName} | {res.MethodName} | Method Entry | Parameters: {parameterValues}");
             _logger.LogInformation("{ClassName} | {MethodName} | Method Entry | Parameters: {Parameters}", res.ClassName, res.MethodName, parameterValues);
         }
-        public void LogMethodExit(object? result)
+        public void LogMethodExit(object? result = null)
         {
             var res = GetCallerInfo();
             WriteLog("INFO",$"{res.ClassName} | {res.MethodName} | Method Exit | Result: {result}");

@@ -1,4 +1,5 @@
 ﻿using API.Logging;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,7 @@ namespace API.Controllers
             _log = appLogger;
             _log.LogClassEntry();
         }
+        [Authorize]
         [HttpGet]
         public IActionResult TestLogging()
         {

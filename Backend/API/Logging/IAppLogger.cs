@@ -19,7 +19,7 @@ namespace API.Logging
     {
         void LogClassEntry();
         void LogMethodEntry(params object[] parameters);
-        void LogMethodExit(object? result);
+        void LogMethodExit(object? result = null);
         void LogException(Exception exception);
         void Info(string message);
     }
